@@ -1,123 +1,123 @@
-# Serasa Agro - Rural Producer Management System
+# Serasa Agro - Sistema de Gestão de Produtores Rurais
 
-A full-stack application for managing rural producers and their properties, built with React + TypeScript frontend and NestJS + PostgreSQL backend.
+Uma aplicação full-stack para gerenciar produtores rurais e suas propriedades, construída com frontend React + TypeScript e backend NestJS + PostgreSQL.
 
-## Features
+## Funcionalidades
 
-- **Producer Management**: CRUD operations for rural producers with CPF/CNPJ validation
-- **Property Management**: Manage farm properties with area validation
-- **Harvest & Culture Tracking**: Track harvests and cultures planted per property
-- **Dashboard**: Visual analytics with charts showing:
-  - Total farms and hectares
-  - Farms by state distribution
-  - Culture types distribution
-  - Land use (cultivable vs vegetation)
+- **Gestão de Produtores**: Operações CRUD para produtores rurais com validação de CPF/CNPJ
+- **Gestão de Propriedades**: Gerenciar propriedades rurais com validação de área
+- **Acompanhamento de Safras e Culturas**: Rastrear safras e culturas plantadas por propriedade
+- **Dashboard**: Análises visuais com gráficos mostrando:
+  - Total de fazendas e hectares
+  - Distribuição de fazendas por estado
+  - Distribuição de tipos de cultura
+  - Uso da terra (cultivável vs vegetação)
 
-## Tech Stack
+## Tecnologias Utilizadas
 
 ### Backend
-- NestJS with TypeScript
-- PostgreSQL with TypeORM
-- Class Validator for data validation
-- Swagger/OpenAPI documentation
-- Jest for testing
+- NestJS com TypeScript
+- PostgreSQL com TypeORM
+- Class Validator para validação de dados
+- Documentação Swagger/OpenAPI
+- Jest para testes
 
 ### Frontend
-- React 18 with TypeScript
-- Redux Toolkit for state management
-- Styled Components for styling
-- Recharts for data visualization
-- React Hook Form with Yup validation
-- Atomic Design pattern
-- Jest + React Testing Library for testing
+- React 18 com TypeScript
+- Redux Toolkit para gerenciamento de estado
+- Styled Components para estilização
+- Recharts para visualização de dados
+- React Hook Form com validação Yup
+- Padrão Atomic Design
+- Jest + React Testing Library para testes
 
-## Getting Started
+## Como Começar
 
-### Prerequisites
-- Docker and Docker Compose
-- Node.js 18+ (for local development)
+### Pré-requisitos
+- Docker e Docker Compose
+- Node.js 18+ (para desenvolvimento local)
 
-### Running with Docker
+### Executando com Docker
 
-1. Clone the repository
-2. Run the application:
+1. Clone o repositório
+2. Execute a aplicação:
 
 ```bash
 docker compose up --build
 ```
 
-This will start:
+Isso irá iniciar:
 - Frontend: http://localhost:5173
 - Backend: http://localhost:3000
-- API Documentation: http://localhost:3000/api
+- Documentação da API: http://localhost:3000/api
 - PostgreSQL: localhost:5432
 
-**Note**: The database will be automatically populated with sample data on first run to demonstrate the dashboard functionality.
+**Nota**: O banco de dados será automaticamente populado com dados de exemplo na primeira execução para demonstrar a funcionalidade do dashboard.
 
-### Local Development
+### Desenvolvimento Local
 
-#### Backend Setup
+#### Configuração do Backend
 ```bash
 cd backend
 npm install
 npm run start:dev
 ```
 
-#### Frontend Setup
+#### Configuração do Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## API Documentation
+## Documentação da API
 
-Once the backend is running, access the Swagger documentation at:
+Com o backend em execução, acesse a documentação Swagger em:
 http://localhost:3000/api
 
-## Testing
+## Testes
 
-### Backend Tests
+### Testes do Backend
 ```bash
 cd backend
-npm run test          # Unit tests
-npm run test:e2e      # Integration tests
-npm run test:cov      # Coverage report
+npm run test          # Testes unitários
+npm run test:e2e      # Testes de integração
+npm run test:cov      # Relatório de cobertura
 ```
 
-### Frontend Tests
+### Testes do Frontend
 ```bash
 cd frontend
 npm run test
 ```
 
-## Database Schema
+## Esquema do Banco de Dados
 
-The application uses a normalized PostgreSQL schema with the following entities:
+A aplicação utiliza um esquema PostgreSQL normalizado com as seguintes entidades:
 
-- **Producers**: CPF/CNPJ, name
-- **Properties**: Farm details, location, areas
-- **Harvests**: Year, season per property
-- **Cultures**: Culture type, planted area per harvest
+- **Produtores**: CPF/CNPJ, nome
+- **Propriedades**: Detalhes da fazenda, localização, áreas
+- **Safras**: Ano, temporada por propriedade
+- **Culturas**: Tipo de cultura, área plantada por safra
 
-## Validation Rules
+## Regras de Validação
 
-- CPF/CNPJ validation using official algorithms
-- Area validation: cultivable + vegetation ≤ total area
-- All required fields validated on both frontend and backend
+- Validação de CPF/CNPJ usando algoritmos oficiais
+- Validação de área: cultivável + vegetação ≤ área total
+- Todos os campos obrigatórios validados tanto no frontend quanto no backend
 
-## Architecture
+## Arquitetura
 
 ### Backend
-- Modular architecture with separate modules for each entity
-- Service layer for business logic
-- Repository pattern with TypeORM
-- DTO classes for API contracts
-- Custom validators for business rules
+- Arquitetura modular com módulos separados para cada entidade
+- Camada de serviço para lógica de negócio
+- Padrão Repository com TypeORM
+- Classes DTO para contratos da API
+- Validadores customizados para regras de negócio
 
 ### Frontend
-- Atomic Design pattern
-- Redux for global state management
-- Custom hooks for API calls
-- Responsive design with styled-components
-- Form validation with real-time feedback
+- Padrão Atomic Design
+- Redux para gerenciamento de estado global
+- Hooks customizados para chamadas de API
+- Design responsivo com styled-components
+- Validação de formulários com feedback em tempo real
